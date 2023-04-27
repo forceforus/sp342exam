@@ -19,7 +19,19 @@ function checkTicketNo() {
 }
 
 function validateForm() {
-    if (!checkNID()) {
+    if (!checknid2()) {
+        alert("please input!");
+        document.getElementById("nid").focus();
+        return false;
+    } else if (!checkname()) {
+        alert("please input!");
+        document.getElementById("fname").focus();
+        return false;
+    } else if (!checklname()) {
+        alert("please input!");
+        document.getElementById("lname").focus();
+        return false;
+    } else if (!checkNID()) {
         alert("Invalid value for National ID!");
         document.getElementById("nid").focus();
         return false;
@@ -33,5 +45,33 @@ function validateForm() {
             alert("Total price for this booking is " + total + " USD");
             return false;
         }
+    }
+
+}
+
+function checkname() {
+    let fname = (document.getElementById("fname").value).trim();
+    if (fname.length <= 0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function checklname() {
+    let lname = (document.getElementById("lname").value).trim();
+    if (lname.length <= 0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function checknid2() {
+    let nid = (document.getElementById("nid").value).trim();
+    if (nid.length <= 0) {
+        return false;
+    } else {
+        return true;
     }
 }
