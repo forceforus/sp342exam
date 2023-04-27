@@ -11,12 +11,15 @@ function checkNID() {
 
 function checkTicketNo() {
     let num = (document.getElementById("ticknum").value).trim();
-    if (isNaN(num)) {
-        return false;
-    } else {
-        return true;
+    if (!isNaN(num)) {
+        if (num <= 0 || num > 5) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
+
 
 function validateForm() {
     if (!checknid2()) {
